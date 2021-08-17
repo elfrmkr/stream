@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import Header from "./header";
 import StreamCreate from "./streams/streamCreate";
 import StreamDelete from "./streams/streamDelete";
 import StreamEdit from "./streams/streamEdit";
 import StreamList from "./streams/streamList";
 import StreamShow from "./streams/streamShow";
-
+import history from "../history";
 /*Link is preventing page from reloading while navigate arounf the application*/
 
 const App = () => {
   return (
     <div className="ui container">
-      <Router>
+      <Router history={history}>
         <div>
           <Header />
           <Route path="/" exact component={StreamList} />
